@@ -1,4 +1,4 @@
-FROM opencadc/astropy:3.9-slim
+FROM opencadc-metadata-curation/astropy:3.9-slim
 
 RUN apt-get update --no-install-recommends && apt-get dist-upgrade -y && \
     apt-get install -y \
@@ -24,12 +24,12 @@ ARG CAOM2_REPO=opencadc
 ARG OPENCADC_BRANCH=master
 ARG OPENCADC_REPO=opencadc-metadata-curation
 ARG PIPE_BRANCH=master
-ARG PIPE_REPO=opencadc
+ARG PIPE_REPO=opencadc-metadata-curation
 ARG VOS_BRANCH=master
-ARG VOS_REPO=opencadc
+ARG VOS_REPO=opencadc-metadata-curation
 
 
-RUN git clone https://github.com/opencadc/cadctools.git && \
+RUN git clone https://github.com/opencadc-metadata-curation/cadctools.git && \
     cd cadctools && \
     pip install ./cadcdata && \
     cd ..
